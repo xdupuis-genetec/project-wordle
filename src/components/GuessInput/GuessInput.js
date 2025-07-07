@@ -1,10 +1,11 @@
 import React from 'react';
+import { WORD_LENGTH } from '../../constants';
 
 function GuessInput({ setNewGuess }) {
   const [text, setText] = React.useState('');
 
   return (
-    <form class="guess-input-wrapper" onSubmit={(event) => {
+    <form className="guess-input-wrapper" onSubmit={(event) => {
       event.preventDefault();
       setNewGuess(text.toUpperCase());
       setText('');
@@ -12,9 +13,9 @@ function GuessInput({ setNewGuess }) {
       <label htmlFor="guess-input">Enter guess:</label>
       <input 
         required={true}
-        title="5 letter word"
-        minLength={5}
-        maxLength={5}
+        title={`${WORD_LENGTH} letter word`}
+        minLength={WORD_LENGTH}
+        maxLength={WORD_LENGTH}
         type="text" 
         id="guess-input" 
         value={text} 
