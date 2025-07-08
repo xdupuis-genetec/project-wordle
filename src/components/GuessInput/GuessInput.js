@@ -1,7 +1,7 @@
 import React from 'react';
 import { WORD_LENGTH } from '../../constants';
 
-function GuessInput({ setNewGuess }) {
+function GuessInput({ setNewGuess, disabled }) {
   const [text, setText] = React.useState('');
 
   return (
@@ -12,6 +12,7 @@ function GuessInput({ setNewGuess }) {
     }}>
       <label htmlFor="guess-input">Enter guess:</label>
       <input 
+        disabled={disabled}
         required={true}
         title={`${WORD_LENGTH} letter word`}
         minLength={WORD_LENGTH}
