@@ -17,7 +17,7 @@ function Game() {
 
   return (
     <>
-      <GuessesView guesses={guesses} />
+      <GuessesView guesses={guesses} answer={answer} />
       <GuessInput setNewGuess={setNewGuess} />
     </>
   );
